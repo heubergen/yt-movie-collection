@@ -4,7 +4,7 @@
    mysqli_select_db($con, "TESTDB_HERE");
 
   //Download json file and save it in the variable $output
-  $url = "i.json";
+  $url = "content.json";
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $url);
   curl_setopt($ch, CURLOPT_HEADER, 0);
