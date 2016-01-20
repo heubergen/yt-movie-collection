@@ -1,4 +1,4 @@
-# YouTube Movie Collection
+# Upcoming Movie Collection
 Trailer sammeln und Kino/DVD release Datum verwalten
 
 ## Ressourcen
@@ -7,4 +7,4 @@ Trailer sammeln und Kino/DVD release Datum verwalten
 * [jQuery](https://github.com/jquery/jquery)
 
 ## Install
-Just clone the git repo and enter your db details in the json_parser.php file.
+Clone the git repo and enter your db details in the json_parser.php file. Create a TABLE_HERE table manually. id is unique.
