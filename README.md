@@ -12,4 +12,3 @@ Clone the git repo and enter your db details in the json_parser.php file. Create
 ## TODO
 * Consider use of PDO
 * Made sql queries due to mysql escape more secure
-* Filter any ' you find
