@@ -8,3 +8,8 @@ Trailer sammeln und Kino/DVD release Datum verwalten
 
 ## Install
 Clone the git repo and enter your db details in the json_parser.php file. Create a TABLE_HERE table manually. id is unique.
+
+## TODO
+* Consider use of PDO
+* Made sql queries due to mysql escape more secure
+* Filter any ' you find

@@ -11,30 +11,29 @@
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   $output = curl_exec($ch);
   curl_close($ch);
-
   // Filter unused pattern in the json file
   $out = substr($output,10, -3);
-
   //Convert json string into php array
   $data = json_decode($out, true);
-  
+  $point = "'";
         //Loop for each value in variable s
-        foreach($data['payload'] as $item);
+        foreach($data['payload'] as $item)
         {
                 //Extract the Array Values
                 $type         = $item['type'];
                 $id           = $item['id'];
-                $title        = $item['title'];
+                $title_u      = $item['title'];
+                $title        = str_replace($point, '',$title_u);
                 $link         = $item['link_href'];
                 $genre        = $item['genre'];
-                $alt_title    = $item['alt_title'];
                 $cover_url    = $item['cover_url'];
                 $releases     = $item['releases'];
                 $p2p_releases = $item['p2p_releases'];
 
+
                 //Insert JSON to MySQL Database
-                $sql = "INSERT IGNORE INTO TABLE_HERE(type, id, title, link_href, genre, alt_title, cover_url, releases, p2p_releases)
-                        VALUES('$type', '$id', '$title', '$link', '$genre', '$alt_title', '$cover_url', '$releases', '$p2p_releases')";
+                $sql = "INSERT IGNORE INTO TABLE_HERE(type, id, title, link_href, genre, cover_url, releases, p2p_releases)
+                        VALUES('$type', '$id', '$title', '$link', '$genre', '$cover_url', '$releases', '$p2p_releases')";
                         if(!mysqli_query($con, $sql))
                 {
                         die('Error : ' . mysqli_error($con));
