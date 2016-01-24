@@ -44,7 +44,7 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-<?php require 'sql_q1.php'; ?>
+<?php require 'sql_q2.php'; ?>
       <hr>
 
       <footer>
