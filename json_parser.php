@@ -4,7 +4,7 @@
    mysqli_select_db($con, "DB_HERE");
 
    //Download json file and save it in a variable
-   $url = "http://jm3.gienah.uberspace.de/upcoming.json";
+   $url = "API_URL";
    $ch = curl_init();
    curl_setopt($ch, CURLOPT_URL, $url);
    curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -45,5 +45,5 @@
                 {
                         die('Error : ' . mysqli_error($con));
                 }
-        }
+        } echo "Import erfolgreich abgeschlossen";
 ?>
