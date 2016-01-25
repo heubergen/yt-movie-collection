@@ -16,5 +16,13 @@ Trailer sammeln und Kino/DVD release Datum verwalten
 * Consider use of PDO
 * Made sql queries due to mysql escape more secure
 * Create favicon
+* create table with structure from php file
+* Add installer php
+* Add cinema and bd release date from every Movie
+* Add trailer for every Movie
+* Add user space
+* Add possibility to add upcoming movies in own list
+* Add notification when today and cinema data or bd release date match
+* Add option to configure notification
 
 ## Requirement
