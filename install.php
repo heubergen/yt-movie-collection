@@ -31,11 +31,15 @@ Datenbanken werden erstellt, bitte warten...<br>
     password varchar(255)
     )";
     mysqli_query($con, $sqlusr);
-?>
-Datenbanken wurden erfolgreich erstellt.<br>Klick auf den Button um weiterzufahren.<br>
-  <form action="index.html" method="get" style="padding-top: 4%;">
-  <input type="submit" value="Weiter">
-  </form>
-</center>
-</body>
-  </html>
+    ?>
+    Datenbanken wurden erfolgreich erstellt.<br>
+    Cron wird installiert um Import zu gewährleisten<br>Klick auf den Button um weiterzufahren.<br>
+    <?php
+    exec('echo -e "`crontab -l`@daily php /var/www/virtual/jm3/html/json_parser.php" | crontab -');
+    exec('touch installed');
+    ?>
+      <form action="index.php" method="get" style="padding-top: 4%;">
+      <input type="submit" value="Weiter">
+      </form>
+    </center>  </body>
+      </html>
