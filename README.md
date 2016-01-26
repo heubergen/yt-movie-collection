@@ -23,7 +23,6 @@ Trailer sammeln und Kino/DVD release Datum verwalten
 * Add notification when today and cinema data or bd release date match
 * Add option to configure notification
 * Add Date of Registration to database
-* Prevent use of application without visiting installer.html before.
-* Add variable to HERE values to optimize first use. 
+* Add variable to HERE values to optimize first use.
 
 ## Requirement
