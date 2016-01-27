@@ -14,8 +14,8 @@
 </html>
 <?php
    //connect to database and select jm3_test
-   $con = new mysqli("HOST_HERE", "USER_HERE", "PW_HERE","")or die('Could not connect: ' . mysql_error());
-   mysqli_select_db($con, "DB_HERE");
+   $con = new mysqli("localhost", "jm3", "ma7duiy7shioL","")or die('Could not connect: ' . mysql_error());
+   mysqli_select_db($con, "jm3_test");
 ?>
 <html lang="en">
  <body>
@@ -26,7 +26,7 @@
 <tbody>
 <?php
       //Read data from database
-$sql = "SELECT type, title, genre FROM TABLE_HERE";
+$sql = "SELECT type, title, genre FROM tbl_ext";
 $result = mysqli_query($con, $sql);
 // Show mysql error
 if (!$result) {
