@@ -25,22 +25,20 @@
   	foreach($data['payload'] as $item)
 	{
   		//Extract the Array Values & filter variable filter
-  		$type_u       	= $item['type'];
-                $type        	= str_replace($filter, '',$type_u);
                 $id_u         	= $item['id'];
                 $id        	= str_replace($filter, '',$id_u);
                 $title_u      	= $item['title'];
-		$title        	= str_replace($filter, '',$title_u);
+		            $title        	= str_replace($filter, '',$title_u);
                 $link_u         = $item['link_href'];
                 $link        	= str_replace($filter, '',$link_u);
                 $genre_u        = $item['genre'];
                 $genre        	= str_replace($filter, '',$genre_u);
                 $cover_url_u    = $item['cover_url'];
                 $cover_url      = str_replace($filter, '',$cover_url_u);
-  			
+
 		//Insert JSON to MySQL Database
-  		$sql = "INSERT IGNORE INTO tbl_movie(type, id, title, link_href, genre, cover_url)
-        		VALUES('$type', '$id', '$title', '$link', '$genre', '$cover_url')";
+  		$sql = "INSERT IGNORE INTO tbl_movie(id, title, link_href, genre, cover_url)
+        		VALUES('$id', '$title', '$link', '$genre', '$cover_url')";
         		if(!mysqli_query($con, $sql))
     		{
      			die('Error : ' . mysqli_error($con));

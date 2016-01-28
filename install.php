@@ -11,10 +11,9 @@ Bitte warten, Verbindung zur Datenbank wird hergestellt...<br>
 
 Verbindung erfolgreich hergestellt<br>
 Datenbanken werden erstellt, bitte warten...<br>
-<?php   
+<?php
    //Create Table tbl_movie
    $sqlmov="CREATE TABLE IF NOT EXISTS tbl_movie (
-    type text,
     id varchar(15) PRIMARY KEY,
     title text,
     link_href text,
@@ -35,7 +34,6 @@ Datenbanken werden erstellt, bitte warten...<br>
 Datenbanken wurden erfolgreich erstellt.<br>
 Cron wird installiert um Import zu gewährleisten<br>Klick auf den Button um weiterzufahren.<br>
 <?php
-exec('echo -e "`crontab -l`@daily php /var/www/virtual/jm3/html/json_parser.php" | crontab -');
 exec('touch installed');
 ?>
   <form action="index.php" method="get" style="padding-top: 4%;">

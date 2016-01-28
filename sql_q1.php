@@ -22,11 +22,11 @@
 <table id="miyazaki">
 <caption>Kommende Filme</caption>
 <thead>
-<tr><th>Art<th>Titel<th>Genre
+<tr><th>Titel<th>Genre
 <tbody>
 <?php
       //Read data from database
-$sql = "SELECT type, title, genre FROM tbl_ext";
+$sql = "SELECT title, genre FROM tbl_movie";
 $result = mysqli_query($con, $sql);
 // Show mysql error
 if (!$result) {
@@ -36,7 +36,6 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
 	echo "<tr>";
-        echo "<td>".$row['type']."</td>";
         echo "<td>".$row['title']."</td>";
         echo "<td>".$row['genre']."</td>";
         echo "</tr>";

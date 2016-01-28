@@ -1,5 +1,5 @@
 # Upcoming Movie Collection
-Trailer sammeln und Kino/DVD release Datum verwalten
+Catch upcoming movies and fetch there trailer
 
 ## Used Ressource
 
