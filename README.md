@@ -14,8 +14,7 @@ Catch upcoming movies and fetch there trailer
 4. Run installer.html
 
 ## TODO
-* Consider use of PDO
-* Made sql queries due to mysql escape more secure
+* Made sql queries due to mysql escape more secure (http://stackoverflow.com/questions/60174/how-can-i-prevent-sql-injection-in-php?rq=1)
 * Add cinema and bd release date from every Movie
 * Add trailer for every Movie
 * Add user space
