@@ -14,8 +14,7 @@ Catch upcoming movies and fetch there trailer
 4. Run installer.html
 
 ## TODO
-* Consider use of PDO
-* Made sql queries due to mysql escape more secure
+* Made sql queries due to mysql escape more secure (http://stackoverflow.com/questions/60174/how-can-i-prevent-sql-injection-in-php?rq=1)
 * Add cinema and bd release date from every Movie
 * Add trailer for every Movie
 * Add user space
@@ -23,6 +22,6 @@ Catch upcoming movies and fetch there trailer
 * Add notification when today and cinema data or bd release date match
 * Add option to configure notification
 * Add Date of Registration to database
-* Add variable to HERE values to optimize first use.
+* Add possibility to fetch new movie releases every day
 
 ## Requirement

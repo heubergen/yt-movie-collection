@@ -13,9 +13,8 @@
   </head>
 </html>
 <?php
-   //connect to database and select jm3_test
-   $con = new mysqli("localhost", "jm3", "ma7duiy7shioL","")or die('Could not connect: ' . mysql_error());
-   mysqli_select_db($con, "jm3_test");
+//load sql_con.php file
+include 'sql_con.php';
 ?>
 <html lang="en">
  <body>
@@ -25,31 +24,17 @@
 <tr><th>Titel<th>Genre
 <tbody>
 <?php
-      //Read data from database
-$sql = "SELECT title, genre FROM tbl_movie";
-$result = mysqli_query($con, $sql);
-// Show mysql error
-if (!$result) {
-    die(mysqli_error($con));
+foreach($conn->query('SELECT * FROM tbl_movie') as $row) {
+  echo "<tr>";
+  echo "<td>".$row['title']."</td>";
+  echo "<td>".$row['genre']."</td>";
+  echo "</tr>";
 }
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-	echo "<tr>";
-        echo "<td>".$row['title']."</td>";
-        echo "<td>".$row['genre']."</td>";
-        echo "</tr>";
-    }
-} else {
-    echo "0 results";
-}
+$conn = null;
 ?>
 </table>
 </body>
 </html>
-<?php
-mysqli_close($con);
-?>
 <html lang="en">
     <!-- Responsive Table
     ================================================== -->

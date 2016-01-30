@@ -1,7 +1,6 @@
 <?php
-   //connect to database and select jm3_test
-   $con = new mysqli("localhost", "jm3", "ma7duiy7shioL","")or die('Could not connect: ' . mysql_error());
-   mysqli_select_db($con, "jm3_test");
+   //load sql_con.php file
+   include 'sql_con.php';
 
   //Download json file and save it in a variable
   $url = "http://api.xrel.to/api/calendar/upcoming.json";
@@ -18,7 +17,7 @@
   //Convert json string into php array
   $data = json_decode($out, true);
 
-  //Set variable filter for using later
+  //Set variable
   $filter = "'";
 
  	//Loop for each entry
@@ -36,12 +35,13 @@
                 $cover_url_u    = $item['cover_url'];
                 $cover_url      = str_replace($filter, '',$cover_url_u);
 
-		//Insert JSON to MySQL Database
-  		$sql = "INSERT IGNORE INTO tbl_movie(id, title, link_href, genre, cover_url)
-        		VALUES('$id', '$title', '$link', '$genre', '$cover_url')";
-        		if(!mysqli_query($con, $sql))
-    		{
-     			die('Error : ' . mysqli_error($con));
-    		}
-	} echo "Import erfolgreich abgeschlossen";
+                // insert data in table
+                $sql = "INSERT IGNORE INTO tbl_movie(id, title, link_href, genre, cover_url)
+                      VALUES('$id', '$title', '$link', '$genre', '$cover_url')";
+
+                // execute the sql command
+                $conn->exec($sql);
+	}
+  $conn = null;
+  echo "Import erfolgreich abgeschlossen";
 ?>
