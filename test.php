@@ -1,23 +1,20 @@
+<html lang="en">
+<body>
+<table>
+<caption>Kommende Filme</caption>
+<thead>
+<tr><th>Titel<th>Genre
+<tbody>
 <?php
 include 'sql_con.php';
-try {
-   // sql to create table
-   $sql = "CREATE TABLE MyGuests (
-   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-   firstname VARCHAR(30) NOT NULL,
-   lastname VARCHAR(30) NOT NULL,
-   email VARCHAR(50),
-   reg_date TIMESTAMP
-   )";
-
-   // use exec() because no results are returned
-   $conn->exec($sql);
-   echo "Table MyGuests created successfully";
-   }
-catch(PDOException $e)
-   {
-   echo $sql . "<br>" . $e->getMessage();
-   }
-
+foreach($conn->query('SELECT * FROM tbl_movie') as $row) {
+  echo "<tr>";
+  echo "<td>".$row['title']."</td>";
+  echo "<td>".$row['genre']."</td>";
+  echo "</tr>";
+}
 $conn = null;
 ?>
+</table>
+</body>
+</html>

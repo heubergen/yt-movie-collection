@@ -35,6 +35,7 @@ Datenbanken werden erstellt, bitte warten...<br>
 Datenbanken wurden erfolgreich erstellt.<br>Klick auf den Button um weiterzufahren.
 <?php
 exec('touch installed');
+$conn = null;
 ?>
   <form action="index.php" method="get" style="padding-top: 4%;">
   <input type="submit" value="Weiter">

@@ -22,6 +22,6 @@ Catch upcoming movies and fetch there trailer
 * Add notification when today and cinema data or bd release date match
 * Add option to configure notification
 * Add Date of Registration to database
-* Add variable to HERE values to optimize first use.
+* Add possibility to fetch new movie releases every day
 
 ## Requirement

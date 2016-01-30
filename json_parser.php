@@ -42,5 +42,6 @@
                 // execute the sql command
                 $conn->exec($sql);
 	}
+  $conn = null;
   echo "Import erfolgreich abgeschlossen";
 ?>
