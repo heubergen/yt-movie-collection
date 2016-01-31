@@ -1,11 +1,11 @@
 # Upcoming Movie Collection
-Catch upcoming movies and fetch there trailer
+Catch upcoming movies and organize them in a list
 
 ## Used Ressource
 
 * [Bootstrap](https://github.com/twbs/bootstrap) ([and navbar example](https://getbootstrap.com/examples/navbar/))
 * [jQuery](https://github.com/jquery/jquery)
-* [A Better Fluid Responsive Table](http://codepen.io/dudleystorey/pen/Geprd) thanks to @dudleystorey
+* [A Better Fluid Responsive Table](http://codepen.io/dudleystorey/pen/Geprd) thanks to dudleystorey
 
 ## Install
 1. Clone the git repo and enter your db details in sql_q1.php and enter the api url in json_parser.php.

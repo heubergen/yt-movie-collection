@@ -22,15 +22,22 @@ Datenbanken werden erstellt, bitte warten...<br>
    )";
    // execute the sql command
    $conn->exec($sql);
-      // create the table tbl_usr
-      $sql = "CREATE TABLE IF NOT EXISTS tbl_usr (
-        id int(11) AUTO_INCREMENT PRIMARY KEY,
-        username varchar(255) UNIQUE KEY,
-        password varchar(255)
-      )";
 
-      // execute the sql command
-      $conn->exec($sql);
+   // create the table tbl_usr
+   $sql = "CREATE TABLE IF NOT EXISTS tbl_usr (
+    id int(11) AUTO_INCREMENT PRIMARY KEY,
+    username varchar(255) UNIQUE KEY,
+    password varchar(255)
+   )";
+   // execute the sql command
+   $conn->exec($sql);
+
+   // create the table tbl_set
+   $sql = "CREATE TABLE IF NOT EXISTS tbl_set (
+    date date
+   )";
+   // execute the sql command
+   $conn->exec($sql);
 ?>
 Datenbanken wurden erfolgreich erstellt.<br>Klick auf den Button um weiterzufahren.
 <?php

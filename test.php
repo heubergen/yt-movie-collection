@@ -1,20 +1,10 @@
-<html lang="en">
-<body>
-<table>
-<caption>Kommende Filme</caption>
-<thead>
-<tr><th>Titel<th>Genre
-<tbody>
 <?php
-include 'sql_con.php';
-foreach($conn->query('SELECT * FROM tbl_movie') as $row) {
-  echo "<tr>";
-  echo "<td>".$row['title']."</td>";
-  echo "<td>".$row['genre']."</td>";
-  echo "</tr>";
-}
-$conn = null;
+   //load sql_con.php file
+   include 'sql_con.php';
+
+   $conn->query('INSERT INTO `tbl_set`(`date`) VALUES ("2015-01-01")');
+
+//   if (condition) {
+     # code...
+//   }
 ?>
-</table>
-</body>
-</html>
