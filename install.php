@@ -38,6 +38,7 @@ Datenbanken werden erstellt, bitte warten...<br>
    )";
    // execute the sql command
    $conn->exec($sql);
+   $conn->query('INSERT INTO `tbl_set`(`date`) VALUES (NOW())');
 ?>
 Datenbanken wurden erfolgreich erstellt.<br>Klick auf den Button um weiterzufahren.
 <?php
