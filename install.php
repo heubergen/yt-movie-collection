@@ -38,6 +38,11 @@ Datenbanken werden erstellt, bitte warten...<br>
    )";
    // execute the sql command
    $conn->exec($sql);
+   // clear tbl_set to prevent old data
+   $conn->query('TRUNCATE tbl_set');
+   // load json_parser
+   include 'json_parser.php';
+   // Save todays date in database
    $conn->query('INSERT INTO `tbl_set`(`date`) VALUES (NOW())');
 ?>
 Datenbanken wurden erfolgreich erstellt.<br>Klick auf den Button um weiterzufahren.

@@ -17,7 +17,6 @@
     <!-- Custom styles for this template -->
     <link href="css/jumbotron.css" rel="stylesheet">
   </head>
-
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -43,14 +42,15 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-<?php require 'sql_q1.php'; ?>
+<?php
+//load check-new-data.php file
+include 'check-new-data.php';
+require 'sql_q1.php'; ?>
       <hr>
-
       <footer>
         <p>&copy; Markus Ritzmann & Patrick Albrecht</p>
       </footer>
     </div> <!-- /container -->
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

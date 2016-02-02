@@ -24,12 +24,14 @@ include 'sql_con.php';
 <tr><th>Titel<th>Genre
 <tbody>
 <?php
+//load data from database and write it as html
 foreach($conn->query('SELECT * FROM tbl_movie') as $row) {
   echo "<tr>";
   echo "<td>".$row['title']."</td>";
   echo "<td>".$row['genre']."</td>";
   echo "</tr>";
 }
+// Close MySQL Connection
 $conn = null;
 ?>
 </table>
