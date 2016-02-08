@@ -22,5 +22,6 @@ Catch upcoming movies and organize them in a list
 * Add notification when today and cinema data or bd release date match
 * Add option to configure notification
 * Add Date of Registration to database
-
+* User OAuth from API (waiting for V2)
+* Fix api-ext_info.php (rating will not be insert)
 ## Requirement

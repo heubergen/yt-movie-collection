@@ -43,9 +43,9 @@
       </div>
     </nav>
 <?php
-//load check-new-data.php file
+//load all required files
 include 'check-new-data.php';
-require 'sql_q1.php'; ?>
+require 'load-data.php'; ?>
       <hr>
       <footer>
         <p>&copy; Markus Ritzmann & Patrick Albrecht</p>

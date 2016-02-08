@@ -11,8 +11,8 @@
    $today = strtotime('today midnight');
    if ($date == $today) {
    } else {
-            //load json_parser
-            include 'json_parser.php';
+            //load api-calendar_upcoming
+            include 'api-calendar_upcoming.php';
             //save todays date in database
             $conn->query('UPDATE  `tbl_set` SET  `date` = NOW( ) WHERE 1');
    }

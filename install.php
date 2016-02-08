@@ -40,8 +40,8 @@ Datenbanken werden erstellt, bitte warten...<br>
    $conn->exec($sql);
    // clear tbl_set to prevent old data
    $conn->query('TRUNCATE tbl_set');
-   // load json_parser
-   include 'json_parser.php';
+   // load api-calendar_upcoming
+   include 'api-calendar_upcoming.php';
    // Save todays date in database
    $conn->query('INSERT INTO `tbl_set`(`date`) VALUES (NOW())');
 ?>
