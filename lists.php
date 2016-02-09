@@ -48,7 +48,7 @@ include 'check-new-data.php';
 require 'load-data.php'; ?>
       <hr>
       <footer>
-        <p>&copy; Markus Ritzmann & Patrick Albrecht</p>
+        <p>&copy;Patrick Albrecht</p>
       </footer>
     </div> <!-- /container -->
     <!-- Bootstrap core JavaScript
