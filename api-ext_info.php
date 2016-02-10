@@ -6,13 +6,9 @@
   //Download json file and save it in a variable
   foreach ($idnn as $ext_id) {
     $base = "http://api.xrel.to/api/ext_info/info.json?id=";
-    $url = $base . $ext_id;
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $output = curl_exec($ch);
-    curl_close($ch);
+  //$url = $base . $ext_id; -- old code--
+    $url = $base . $ext_id['id'];
+    $output = file_get_contents($url);
 
     // Filter unused pattern in the json file
     $out = substr($output,10, -3);

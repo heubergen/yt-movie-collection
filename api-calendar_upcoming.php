@@ -4,12 +4,7 @@
 
   //Download json file and save it in a variable
   $url = "http://api.xrel.to/api/calendar/upcoming.json";
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, $url);
-  curl_setopt($ch, CURLOPT_HEADER, 0);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  $output = curl_exec($ch);
-  curl_close($ch);
+  $output = file_get_contents($url);
 
   // Filter unused pattern in the json file
   $out = substr($output,10, -3);
@@ -25,11 +20,11 @@
     {
     		//Extract the Array Values & filter variable filter
                   $id_u         	= $item['id'];
-                  $id        	= str_replace($filter, '',$id_u);
+                  $id        	    = str_replace($filter, '',$id_u);
                   $title_u      	= $item['title'];
   		            $title        	= str_replace($filter, '',$title_u);
                   $link_u         = $item['link_href'];
-                  $link        	= str_replace($filter, '',$link_u);
+                  $link         	= str_replace($filter, '',$link_u);
                   $genre_u        = $item['genre'];
                   $genre        	= str_replace($filter, '',$genre_u);
                   $cover_url_u    = $item['cover_url'];
