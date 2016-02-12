@@ -18,10 +18,10 @@ include 'sql_con.php';
 ?>
 <html lang="en">
  <body>
-<table id="miyazaki">
+<table id="movies">
 <caption>Kommende Filme</caption>
 <thead>
-<tr><th>Titel<th>Genre
+<tr><th>Titel<th>Genre<th>Rating
 <tbody>
 <?php
 //load data from database and write it as html
@@ -29,6 +29,7 @@ foreach($conn->query('SELECT * FROM tbl_movie') as $row) {
   echo "<tr>";
   echo "<td>".$row['title']."</td>";
   echo "<td>".$row['genre']."</td>";
+  echo "<td>".$row['rating']."</td>";
   echo "</tr>";
 }
 // Close MySQL Connection
