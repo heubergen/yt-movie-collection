@@ -1,7 +1,7 @@
 <?php
   //load sql_con.php file
   include 'sql_con.php';
-
+  //
   $idnn = $conn->query('SELECT id FROM tbl_movie WHERE rating IS NULL');
   foreach ($idnn as $ext_id) {
     //Download json file and save it in a variable
