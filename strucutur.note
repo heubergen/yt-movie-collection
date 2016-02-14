@@ -1,0 +1,22 @@
+Falls
+(
+ Date leer
+  oder
+ Date > 50 Tage
+  oder
+ (
+  Rating Leer
+   und
+  Date > 10
+ )
+Dann
+(
+ Hole API-Rating
+
+ Falls
+  API-Rating nicht leer
+ Dann
+  Schreibe in die DB
+   und
+  Schreibe Date in die DB
+)
