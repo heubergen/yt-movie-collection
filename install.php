@@ -44,11 +44,11 @@ Datenbanken werden erstellt und vorbereitet, bitte warten...<br>
    // execute the sql command
    $conn->exec($sql3);
    echo "Laden von aktuellen Daten aus API<br>";
+   // Insert columne date in database
+   $conn->query("INSERT INTO `tbl_set`(`last_api_date`) VALUES (CURDATE())");
    // load api files
    include 'api-calendar_upcoming.php';
    include 'api-ext_info.php';
-   // Save todays date in database
-   $conn->query("INSERT INTO `tbl_set`(`last_api_date`) VALUES (CURDATE())");
 ?>
 Datenbanken wurden erfolgreich erstellt.<br>Klick auf den Button um weiterzufahren.
 <?php

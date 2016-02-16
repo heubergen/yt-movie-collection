@@ -30,9 +30,10 @@ $base = "http://api.xrel.to/api/ext_info/info.json?id=";
       //prevent writing of Zero Rating in DB
       if (!empty($data['rating'])) {
         $rating = $data["rating"];
+        $rating_r = round($rating, 0);
         $id     = $html_output["id"];
         //Write Rating in DB
-        $conn->query("UPDATE `tbl_movie` SET `rating` = '$rating' WHERE `id`='$id'");
+        $conn->query("UPDATE `tbl_movie` SET `rating` = '$rating_r' WHERE `id`='$id'");
       }
       $id     = $html_output["id"];
       //Write Todays Date in DB

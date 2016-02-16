@@ -29,7 +29,12 @@ foreach($conn->query('SELECT * FROM tbl_movie') as $row) {
   echo "<tr>";
   echo "<td>".$row['title']."</td>";
   echo "<td>".$row['genre']."</td>";
-  echo "<td>".$row['rating']."</td>";
+  if (empty($row['rating'])) {
+    echo "<td>"."n.a."."</td>";
+  }
+  else {
+    echo "<td>".$row['rating']."</td>";
+  }
   echo "</tr>";
 }
 // Close MySQL Connection
