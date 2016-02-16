@@ -9,12 +9,15 @@ $minusten = strtotime('-10 days midnight');
 $minusfifty = strtotime('-50 days midnight');
 //unix timestamp now
 $minusnull = strtotime('now midnight');
+//convert timestamp in compatible format for db
+$datenullcomp = date("Y-m-d", $minusnull);
 //base url for ext_info
 $base = "http://api.xrel.to/api/ext_info/info.json?id=";
 //loop
   foreach ($stmt as $html_output) {
     //conditions
     if (empty($html_output['date']) OR $html_output['date'] < $minusfifty OR (!isset($html_output['rating']) AND $html_output['date'] < $minusten)) {
+      echo $html_output["id"];
       //put url for api access together
       $url = $base . $html_output['id'];
       //download json file
@@ -31,7 +34,7 @@ $base = "http://api.xrel.to/api/ext_info/info.json?id=";
         $conn->query("UPDATE `tbl_movie` SET `rating` = '$rating' WHERE `id`='$id'");
       }
       $id     = $html_output["id"];
-      $conn->query("UPDATE `tbl_movie` SET `rating_date` = '$minusnull' WHERE `id`='$id'");
+      $conn->query("UPDATE `tbl_movie` SET `rating_date` = '$datenullcomp' WHERE `id`='$id'");
     }
   }
 //close database connection

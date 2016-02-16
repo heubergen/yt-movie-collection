@@ -1,49 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <body>
-<center><h1>Herzlich Willkommen zur Einrichtung von Upcoming Movie Collection</h1>
-Dieses Tool wurde von Patrick Albrecht entwickelt und unter der MIT Lizenz ver&ouml;ffentlicht.<br>
+<center><h1>Herzlich Willkommen</h1>
 Bitte warten, Verbindung zur Datenbank wird hergestellt...<br>
 <?php
 //load sql_con.php file
 include 'sql_con.php';
 ?>
 Verbindung erfolgreich hergestellt<br>
-Datenbanken werden erstellt, bitte warten...<br>
+Datenbanken werden erstellt und vorbereitet, bitte warten...<br>
 <?php
+    // clear all tables to prevent old data
+    $conn->query('drop table tbl_movie');
+    $conn->query('drop table tbl_set');
+    $conn->query('drop table tbl_usr');
    // create the table tbl_movie
-   $sql = "CREATE TABLE IF NOT EXISTS tbl_movie (
+   $sql1 = "CREATE TABLE IF NOT EXISTS tbl_movie (
      id varchar(15) PRIMARY KEY,
      title text,
      link_href text,
      genre text,
      cover_url text,
-     video_url text
+     video_url text,
+     rating text,
+     rating_date date
    )";
    // execute the sql command
-   $conn->exec($sql);
+   $conn->exec($sql1);
 
    // create the table tbl_usr
-   $sql = "CREATE TABLE IF NOT EXISTS tbl_usr (
+   $sql2 = "CREATE TABLE IF NOT EXISTS tbl_usr (
     id int(11) AUTO_INCREMENT PRIMARY KEY,
     username varchar(255) UNIQUE KEY,
     password varchar(255)
    )";
    // execute the sql command
-   $conn->exec($sql);
+   $conn->exec($sql2);
 
    // create the table tbl_set
-   $sql = "CREATE TABLE IF NOT EXISTS tbl_set (
-    date date
+   $sql3 = "CREATE TABLE IF NOT EXISTS tbl_set (
+    last_api_date date
    )";
    // execute the sql command
-   $conn->exec($sql);
-   // clear tbl_set to prevent old data
-   $conn->query('TRUNCATE tbl_set');
-   // load api-calendar_upcoming
+   $conn->exec($sql3);
+   echo "Laden von aktuellen Daten aus API<br>";
+   // load api files
    include 'api-calendar_upcoming.php';
+   include 'api-ext_info.php';
    // Save todays date in database
-   $conn->query('INSERT INTO `tbl_set`(`date`) VALUES (NOW())');
+   $conn->query("INSERT INTO `tbl_set`(`last_api_date`) VALUES (CURDATE())");
 ?>
 Datenbanken wurden erfolgreich erstellt.<br>Klick auf den Button um weiterzufahren.
 <?php
