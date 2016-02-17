@@ -8,7 +8,7 @@ Catch upcoming movies and organize them in a list
 * [A Better Fluid Responsive Table](http://codepen.io/dudleystorey/pen/Geprd) thanks to dudleystorey
 
 ## Install
-1. Clone the git repo and enter your db details in sql_q1.php and enter the api url in json_parser.php.
+1. Clone the git repo and enter your db details in sql_con.php and enter the api url in json_parser.php.
 2. Configure the json_parser.php as a cron and let it run every day for example.
 3. Put your own favicons in the favicon folder
 4. Run installer.html
