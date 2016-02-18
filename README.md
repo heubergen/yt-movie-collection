@@ -21,8 +21,8 @@ Catch upcoming movies and organize them in a list
 * Add possibility to add upcoming movies in own list
 * Add notification when today and cinema data or bd release date match
 * Add option to configure notification
-* Add Date of Registration to database
 * User OAuth from API (waiting for V2)
+* Add first configuration
 
 ## Temp
 * https://developers.google.com/youtube/v3/docs/search/list
