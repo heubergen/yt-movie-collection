@@ -21,7 +21,7 @@ include 'sql_con.php';
 <table id="movies">
 <caption>Kommende Filme</caption>
 <thead>
-<tr><th>Titel<th>Genre<th>Rating
+<tr><th>Titel<th>Genre<th>Rating<th>DE Cine<th>DE BD<th>EN Cine<th>EN BD
 <tbody>
 <?php
 //load data from database and write it as html
@@ -34,6 +34,30 @@ foreach($conn->query('SELECT * FROM tbl_movie') as $row) {
   }
   else {
     echo "<td>".$row['rating']."</td>";
+  }
+  if (empty($row['de_cine'])) {
+    echo "<td>"."n.a."."</td>";
+  }
+  else {
+    echo "<td>".$row['de_cine']."</td>";
+  }
+  if (empty($row['de_hd'])) {
+    echo "<td>"."n.a."."</td>";
+  }
+  else {
+    echo "<td>".$row['de_hd']."</td>";
+  }
+  if (empty($row['en_cine'])) {
+    echo "<td>"."n.a."."</td>";
+  }
+  else {
+    echo "<td>".$row['en_cine']."</td>";
+  }
+  if (empty($row['en_hd'])) {
+    echo "<td>"."n.a."."</td>";
+  }
+  else {
+    echo "<td>".$row['en_hd']."</td>";
   }
   echo "</tr>";
 }

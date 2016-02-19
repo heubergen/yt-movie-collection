@@ -13,7 +13,8 @@
    } else {
             //load all api files
             include 'api-calendar_upcoming.php';
-            include 'api-ext_info.php';
+            include 'api-rating.php';
+            include 'api-release.php';
             //save todays date in database
             $conn->query('UPDATE `tbl_set` SET  `last_api_date` = CURDATE() WHERE 1');
    }
