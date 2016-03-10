@@ -20,5 +20,4 @@ Catch upcoming movies and organize them in a list
 * User OAuth from API (waiting for V2)
 
 ## Temp
-* https://developers.google.com/youtube/v3/docs/search/list
-* http://stackoverflow.com/questions/24101638/search-youtube-and-get-top-video-id
+* http://www.w3schools.com/jsref/event_onclick.asp

@@ -39,11 +39,11 @@ $base = "http://api.xrel.to/api/ext_info/info.json?id=";
             $daterow = $value['date'];
             $conn->query("UPDATE `tbl_movie` SET `de_hd` = '$daterow', `date_rel` = '$datenullcomp' WHERE `id` = '$id'");
             break;
-          case 'en-cine':
+          case 'us-cine':
             $daterow = $value['date'];
             $conn->query("UPDATE `tbl_movie` SET `en_cine` = '$daterow', `date_rel` = '$datenullcomp' WHERE `id` = '$id'");
             break;
-          case 'en-hd':
+          case 'us-hd':
             $daterow = $value['date'];
             $conn->query("UPDATE `tbl_movie` SET `en_hd` = '$daterow', `date_rel` = '$datenullcomp' WHERE `id` = '$id'");
             break;
