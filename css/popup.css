@@ -8,7 +8,7 @@ body {
   background: rgba(0, 0, 0, 0.8);
   opacity: 0.8;
   filter: alpha(opacity=80);
-  position: absolute;
+  position: fixed;
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -17,16 +17,16 @@ body {
 }
 /* Popup */
 .popup {
-  background: white;
-  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   z-index: 101;
-  width: 500px;
+  width: 560px;
   /*Change your width here*/
-  height: 200px;
+  height: 315px;
   /*Change your height here*/
   margin: auto;
   /* Popup Inner */
@@ -36,15 +36,18 @@ body {
     width: 90%;
     margin: auto 5%;
   }
+  iframe {
+    width: 110%;
+  }
 }
 .popup .popup-inner {
-  position: relative;
-  padding: 1em;
+  position: fixed;
+  /* padding: 1em; */
 }
 .popup .popup-inner input.s3-btn-close {
   position: absolute;
   top: -0.5em;
-  right: -0.5em;
+  right: -2.9em;
   background: black;
   border: solid 2px white;
   color: white;

@@ -6,7 +6,7 @@ Catch upcoming movies and organize them in a list
 * [Bootstrap](https://github.com/twbs/bootstrap) ([and navbar example](https://getbootstrap.com/examples/navbar/))
 * [jQuery](https://github.com/jquery/jquery)
 * [A Better Fluid Responsive Table](http://codepen.io/dudleystorey/pen/Geprd) thanks to dudleystorey
-* [Popup/Modal without JS](http://codepen.io/peiche/pen/vhqym) thanks to peiche
+* [Responsive Popup with JavaScript](http://codepen.io/Shaz3e/pen/jEZpJW) thanks to Shaz3e
 
 ## Install
 1. Clone the git repo and enter your db details in sql_con.php and enter the api url in json_parser.php.

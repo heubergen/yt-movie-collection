@@ -10,6 +10,7 @@
 
     <!-- Responsive Table, thanks to @geoffyuen -->
     <link href="css/responsive_table.css" rel="stylesheet">
+    <link href="css/popup.css" rel="stylesheet">
   </head>
 </html>
 <?php
@@ -59,6 +60,8 @@ foreach($conn->query('SELECT * FROM tbl_movie') as $row) {
   else {
     echo "<td>".$row['en_hd']."</td>";
   }
+  // save variable for later use in js
+  $title = $row['title'];
   ?>
   <td>
     <div class="first_div">
@@ -83,12 +86,15 @@ foreach($conn->query('SELECT * FROM tbl_movie') as $row) {
           	// IF THE AJAX CALL IS SUCCESSFULL
               if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                   document.getElementById("ajax_auto").innerHTML = xmlhttp.responseText;
+                  document.getElementById("popup").style.display="block";
+                  document.getElementById("overlay").style.display="block";
               }
           };
           // Action if button is clicked
-          xmlhttp.open("GET","thephpscript.php");
-          xmlhttp.send();
-          document.getElementById("showAjax").style.display = "none";
+          var sdfasdf = <?php echo "$title"; ?>; //Don't forget the extra semicolon!
+          //xmlhttp.open("GET","yttrailer.php?name=" + "<?php $row['title']?>", true);
+          //xmlhttp.send();
+          document.write(sdfasdf);
   }
   </script>
   <?php
@@ -105,4 +111,5 @@ $conn = null;
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/responsive_table.js"></script>
+    <script src="js/popup.js"></script>
 </html>
