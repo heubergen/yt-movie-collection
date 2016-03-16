@@ -53,6 +53,4 @@ $base = "http://api.xrel.to/api/ext_info/info.json?id=";
       }
     }
   }
-//close database connection
-$conn = null;
 ?>

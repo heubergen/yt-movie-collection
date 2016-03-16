@@ -40,6 +40,4 @@ $base = "http://api.xrel.to/api/ext_info/info.json?id=";
       $conn->query("UPDATE `tbl_movie` SET `rating_date` = '$datenullcomp' WHERE `id`='$id'");
     }
   }
-//close database connection
-$conn = null;
 ?>

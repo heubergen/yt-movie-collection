@@ -21,7 +21,7 @@ include 'sql_con.php';
 <table id="movies">
 <caption>Kommende Filme</caption>
 <thead>
-<tr><th>Titel<th>Genre<th>Rating<th>DE Cine<th>DE BD<th>EN Cine<th>EN BD
+<tr><th>Titel<th>Genre<th>Rating<th>DE Cine<th>DE BD<th>EN Cine<th>EN BD<th>Youtube Trailer
 <tbody>
 <?php
 //load data from database and write it as html
@@ -59,6 +59,39 @@ foreach($conn->query('SELECT * FROM tbl_movie') as $row) {
   else {
     echo "<td>".$row['en_hd']."</td>";
   }
+  ?>
+  <td>
+    <div class="first_div">
+  <!-- THIS BUTTON CALLS AJAX SCRIPT -->
+      <button id="showAjax" class="s3-btn" name="Open" onclick="showAjaxStuff();">Show Video</button>
+    </div>
+    <div class="second_div" id="ajax_auto">
+      <!-- AJAX CONTENT WILL BE LOADED INTO THIS DIV -->
+    </div>
+  </td>
+  <script type="text/javascript">
+  	function showAjaxStuff() {
+
+          if (window.XMLHttpRequest) {
+          	// MODERN BROWSERS
+              xmlhttp = new XMLHttpRequest();
+          } else {
+          	// VERY OLD BROWSERS
+              xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange = function() {
+          	// IF THE AJAX CALL IS SUCCESSFULL
+              if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                  document.getElementById("ajax_auto").innerHTML = xmlhttp.responseText;
+              }
+          };
+          // Action if button is clicked
+          xmlhttp.open("GET","thephpscript.php");
+          xmlhttp.send();
+          document.getElementById("showAjax").style.display = "none";
+  }
+  </script>
+  <?php
   echo "</tr>";
 }
 // Close MySQL Connection

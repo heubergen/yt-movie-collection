@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
+<head>
+</head>
 <body>
-<?php
-$yt_search = 'Godzilla trailer 2014';
-$yt_source = file_get_contents('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=relevance&q='.urlencode($yt_search).'&key=AIzaSyDyV_C_n9gYHT0y2Bulb2C3Fym2KM90o00');
-$yt_decode = json_decode($yt_source, true);
-if ($yt_decode['pageInfo']['totalResults']>0) {
-    if (strlen($yt_decode['items'][0]['id']['videoId'])>5) {
-        $yt_videoid = trim($yt_decode['items'][0]['id']['videoId']);
-        echo $yt_videoid;
-    }
-}
-echo "<br>";
-echo "Oben steht jetzt deine ID, super!";
-echo "<br>";
-echo "Willst du nun auch das Video sehen?";
-echo "<br>";
-echo "Dann viel Spass :)";
-echo "<br>";
-echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/'.urlencode($yt_videoid). '" frameborder="0" allowfullscreen></iframe>';
-echo "<br>";?>
-<button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
-Click me to display Date and Time.</button>
-<p id="demo"></p>
+<script>
+  function myAjax() {
+        $.ajax({
+             type: "POST",
+             url: '../test.php',
+             data:{action:'call_this'},
+             success:function(html) {
+               alert(html);
+             }
+
+        });
+   }
+</script>
+  <a href="" onclick="myAjax()">Delete</a>
+  <?php
+  if($_POST['action'] == 'call_this') {
+    echo "it works!";
+  }
+  else {
+    echo "versagt!";
+  }
+  ?>
 </body>
 </html>
