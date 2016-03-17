@@ -16,9 +16,7 @@ Catch upcoming movies and organize them in a list
 
 ## TODO
 * Made sql queries due to mysql escape more secure (http://stackoverflow.com/questions/60174/how-can-i-prevent-sql-injection-in-php?rq=1)
-* Add trailer for every Movie
 * Add possibility to add upcoming movies in own list
 * User OAuth from API (waiting for V2)
 
 ## Temp
-* http://www.w3schools.com/jsref/event_onclick.asp
