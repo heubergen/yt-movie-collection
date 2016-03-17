@@ -60,44 +60,11 @@ foreach($conn->query('SELECT * FROM tbl_movie') as $row) {
   else {
     echo "<td>".$row['en_hd']."</td>";
   }
-  // save variable for later use in js
-  $title = $row['title'];
-  ?>
-  <td>
-    <div class="first_div">
-  <!-- THIS BUTTON CALLS AJAX SCRIPT -->
-      <button id="showAjax" class="s3-btn" name="Open" onclick="showAjaxStuff();">Show Video</button>
-    </div>
-    <div class="second_div" id="ajax_auto">
-      <!-- AJAX CONTENT WILL BE LOADED INTO THIS DIV -->
-    </div>
-  </td>
-  <script type="text/javascript">
-  	function showAjaxStuff() {
-
-          if (window.XMLHttpRequest) {
-          	// MODERN BROWSERS
-              xmlhttp = new XMLHttpRequest();
-          } else {
-          	// VERY OLD BROWSERS
-              xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-          }
-          xmlhttp.onreadystatechange = function() {
-          	// IF THE AJAX CALL IS SUCCESSFULL
-              if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                  document.getElementById("ajax_auto").innerHTML = xmlhttp.responseText;
-                  document.getElementById("popup").style.display="block";
-                  document.getElementById("overlay").style.display="block";
-              }
-          };
-          // Action if button is clicked
-          var sdfasdf = <?php echo "$title"; ?>; //Don't forget the extra semicolon!
-          //xmlhttp.open("GET","yttrailer.php?name=" + "<?php $row['title']?>", true);
-          //xmlhttp.send();
-          document.write(sdfasdf);
-  }
-  </script>
-  <?php
+  //prepare movie name for youtube search
+  $movie = $row['title'];
+  $adding_yt = "trailer";
+  $yt_search = $movie." ".$adding_yt;
+  echo "<td>"."<a href='https://www.youtube.com/results?search_query=$yt_search'>link text</a>"."</td>";
   echo "</tr>";
 }
 // Close MySQL Connection
@@ -111,5 +78,4 @@ $conn = null;
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/responsive_table.js"></script>
-    <script src="js/popup.js"></script>
 </html>
