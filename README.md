@@ -9,14 +9,13 @@ Catch upcoming movies and organize them in a list
 * [Responsive Popup with JavaScript](http://codepen.io/Shaz3e/pen/jEZpJW) thanks to Shaz3e
 
 ## Install
-1. Clone the git repo and enter your db details in sql_con.php and enter the api url in json_parser.php.
-2. Configure the json_parser.php as a cron and let it run every day for example.
-3. Put your own favicons in the favicon folder
-4. Run installer.html
+1. Clone the git repo and enter your db details in sql_con.php
+2. Put your own favicons in the favicon folder
+3. Run installer.html
 
 ## TODO
 * Made sql queries due to mysql escape more secure (http://stackoverflow.com/questions/60174/how-can-i-prevent-sql-injection-in-php?rq=1)
 * Add possibility to add upcoming movies in own list
-* User OAuth from API (waiting for V2)
+* User OAuth from API (waiting for V2) (as sync for list)
 
 ## Temp

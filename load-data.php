@@ -12,17 +12,25 @@
     <link href="css/responsive_table.css" rel="stylesheet">
     <link href="css/popup.css" rel="stylesheet">
   </head>
-</html>
 <?php
 //load sql_con.php file
 include 'sql_con.php';
 ?>
-<html lang="en">
- <body>
+<body>
 <table id="movies">
 <caption>Kommende Filme</caption>
 <thead>
-<tr><th>Titel<th>Genre<th>Rating<th>DE Cine<th>DE BD<th>EN Cine<th>EN BD<th>Youtube Trailer
+<tr>
+    <th>Titel</th>
+    <th>Genre</th>
+    <th>Rating</th>
+    <th>DE Cine</th>
+    <th>DE BD</th>
+    <th>EN Cine</th>
+    <th>EN BD</th>
+    <th>Youtube Trailer</th>
+</tr>
+</thead>
 <tbody>
 <?php
 //load data from database and write it as html
@@ -30,50 +38,24 @@ foreach($conn->query('SELECT * FROM tbl_movie') as $row) {
   echo "<tr>";
   echo "<td>".$row['title']."</td>";
   echo "<td>".$row['genre']."</td>";
-  if (empty($row['rating'])) {
-    echo "<td>"."n.a."."</td>";
-  }
-  else {
-    echo "<td>".$row['rating']."</td>";
-  }
-  if (empty($row['de_cine'])) {
-    echo "<td>"."n.a."."</td>";
-  }
-  else {
-    echo "<td>".$row['de_cine']."</td>";
-  }
-  if (empty($row['de_hd'])) {
-    echo "<td>"."n.a."."</td>";
-  }
-  else {
-    echo "<td>".$row['de_hd']."</td>";
-  }
-  if (empty($row['en_cine'])) {
-    echo "<td>"."n.a."."</td>";
-  }
-  else {
-    echo "<td>".$row['en_cine']."</td>";
-  }
-  if (empty($row['en_hd'])) {
-    echo "<td>"."n.a."."</td>";
-  }
-  else {
-    echo "<td>".$row['en_hd']."</td>";
-  }
+  echo "<td>".$row['rating']."</td>";
+  echo "<td>".$row['de_cine']."</td>";
+  echo "<td>".$row['de_hd']."</td>";
+  echo "<td>".$row['en_cine']."</td>";
+  echo "<td>".$row['en_hd']."</td>";
   //prepare movie name for youtube search
   $movie = $row['title'];
   $adding_yt = "trailer";
   $yt_search = $movie." ".$adding_yt;
-  echo "<td>"."<a href='https://www.youtube.com/results?search_query=$yt_search'>link text</a>"."</td>";
+  echo "<td>"."<a href='https://www.youtube.com/results?search_query=$yt_search'>Click here</a>"."</td>";
   echo "</tr>";
 }
 // Close MySQL Connection
 $conn = null;
 ?>
+</tbody>    
 </table>
 </body>
-</html>
-<html lang="en">
     <!-- Responsive Table
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
