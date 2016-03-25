@@ -15,8 +15,6 @@ Catch upcoming movies and organize them in a list
 
 ## TODO
 * Made sql queries due to mysql escape more secure (http://stackoverflow.com/questions/60174/how-can-i-prevent-sql-injection-in-php?rq=1)
-* Add login (http://www.wikihow.com/Create-a-Secure-Login-Script-in-PHP-and-MySQL)
 * Add possibility to add upcoming movies in own list
 * User OAuth from API (waiting for V2) (as sync for list)
-
 ## Temp

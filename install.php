@@ -11,9 +11,8 @@ Verbindung erfolgreich hergestellt<br>
 Datenbanken werden erstellt und vorbereitet, bitte warten...<br>
 <?php
     // clear all tables to prevent old data
-    $conn->query('drop table tbl_movie');
-    $conn->query('drop table tbl_set');
-    $conn->query('drop table tbl_usr');
+    $conn->query('drop table if exists tbl_movie');
+    $conn->query('drop table if exists tbl_set');
    // create the table tbl_movie
    $sql1 = "CREATE TABLE IF NOT EXISTS tbl_movie (
      id varchar(15) PRIMARY KEY,
@@ -28,19 +27,11 @@ Datenbanken werden erstellt und vorbereitet, bitte warten...<br>
      de_hd date,
      en_cine date,
      en_hd date,
-     date_rel date
+     date_rel date,
+     unread tinyint
    )";
    // execute the sql command
    $conn->exec($sql1);
-
-   // create the table tbl_usr
-   $sql2 = "CREATE TABLE IF NOT EXISTS tbl_usr (
-    id int(11) AUTO_INCREMENT PRIMARY KEY,
-    username varchar(255) UNIQUE KEY,
-    password varchar(255)
-   )";
-   // execute the sql command
-   $conn->exec($sql2);
 
    // create the table tbl_set
    $sql3 = "CREATE TABLE IF NOT EXISTS tbl_set (

@@ -45,7 +45,7 @@
 <?php
 //load all required files
 include 'check-new-data.php';
-require 'load-data.php'; ?>
+require 'load-data-unread.php'; ?>
       <hr>
       <footer>
         <p>&copy;Patrick Albrecht</p>
