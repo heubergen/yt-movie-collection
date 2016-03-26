@@ -1,22 +1,8 @@
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come after -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="TODO">
-
-    <!-- Responsive Table, thanks to @geoffyuen -->
-    <link href="css/responsive_table.css" rel="stylesheet">
-    <link href="css/popup.css" rel="stylesheet">
-  </head>
 <?php
-//load sql_con.php file
+//load php files
 include 'sql_con.php';
+include 'ajax-call.php';
 ?>
-<body>
 <table id="movies">
 <caption>Kommende Filme</caption>
 <thead>
@@ -29,10 +15,12 @@ include 'sql_con.php';
     <th>EN Cine</th>
     <th>EN BD</th>
     <th>Youtube Trailer</th>
+    <th>In eigene Liste hinzufügen</th>
 </tr>
 </thead>
 <tbody>
 <?php
+$i = 0;
 //load data from database and write it as html
 foreach($conn->query('SELECT * FROM tbl_movie') as $row) {
   echo "<tr>";
@@ -48,16 +36,16 @@ foreach($conn->query('SELECT * FROM tbl_movie') as $row) {
   $adding_yt = "trailer";
   $yt_search = $movie." ".$adding_yt;
   echo "<td>"."<a href='https://www.youtube.com/results?search_query=$yt_search'>Click here</a>"."</td>";
+  echo "<td>".ownList("Test", $i)."</td>";
   echo "</tr>";
+  $i++;
 }
 // Close MySQL Connection
 $conn = null;
 ?>
 </tbody>    
 </table>
-</body>
     <!-- Responsive Table
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/responsive_table.js"></script>
-</html>

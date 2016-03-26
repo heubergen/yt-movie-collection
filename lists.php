@@ -16,6 +16,8 @@
 
     <!-- Custom styles for this template -->
     <link href="css/jumbotron.css" rel="stylesheet">
+    <!-- Custom styles for table -->
+    <link href="css/responsive_table.css" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -48,9 +50,8 @@ include 'check-new-data.php';
 require 'load-data-unread.php'; ?>
       <hr>
       <footer>
-        <p>&copy;Patrick Albrecht</p>
+        <p>&copy;*Author*</p>
       </footer>
-    </div> <!-- /container -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
