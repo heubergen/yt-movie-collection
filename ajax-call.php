@@ -1,9 +1,9 @@
 <?php
-function ownList($movname, $i){
+function ownList($movieid, $i){
 return '
 <div class="first_div">
 <!-- THIS BUTTON CALLS AJAX SCRIPT -->
-<button id="showAjax" onclick="showAjaxStuff_'.$i.'();">Show Video {php}</button>
+<button id="showAjax" onclick="showAjaxStuff_'.$i.'();">Add</button>
 </div>
 
 <div class="second_div" id="ajax_auto_'.$i.'">
@@ -26,7 +26,7 @@ return '
             }
         };
         // CALLING THE PHP FILE
-        xmlhttp.open("GET","ajax-code.php");
+        xmlhttp.open("GET","ajax-code.php?movieid='.$movieid.'");
         xmlhttp.send();
 }
 </script>';
