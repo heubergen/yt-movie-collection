@@ -28,7 +28,7 @@ Datenbanken werden erstellt und vorbereitet, bitte warten...<br>
      en_cine date,
      en_hd date,
      date_rel date,
-     unread tinyint
+     list tinyint default '0'
    )";
    // execute the sql command
    $conn->exec($sql1);
@@ -43,7 +43,9 @@ Datenbanken werden erstellt und vorbereitet, bitte warten...<br>
    // Insert columne date in database
    $conn->query("INSERT INTO `tbl_set`(`last_api_date`) VALUES (CURDATE())");
    // load api files
-   include 'api-calendar_upcoming.php';
+            include 'api-calendar_upcoming.php';
+            include 'api-rating.php';
+            include 'api-release.php';
 ?>
 Datenbanken wurden erfolgreich erstellt.<br>Klick auf den Button um weiterzufahren.
 <?php

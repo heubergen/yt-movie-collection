@@ -14,9 +14,12 @@
   <body>
           <a class="navbar-brand" href="index.php">Startpage</a>
 <?php
-//load all required files
-include 'check-new-data.php';
-require 'load-data-unread.php'; ?>
+      //load all required files
+      include 'check-new-data.php';
+        $set = $_GET['set'];
+        include 'readlist.php';
+        readlist($set);
+      //echo "$set";?>
       <footer>
         <p>&copy;*Author*</p>
       </footer>

@@ -1,5 +1,5 @@
 <?php
-function ownList($movieid, $i){
+function ajaxcall($movieid, $i){
 return '
 <div class="first_div">
 <!-- THIS BUTTON CALLS AJAX SCRIPT -->
