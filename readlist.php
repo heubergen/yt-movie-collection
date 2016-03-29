@@ -2,7 +2,7 @@
    function readlist($showlist){
        //load php files
        include 'sql_con.php';
-       include 'ajax-call.php';
+       include 'fn-a-list-call.php';
        echo 
            "<table id='movies'>
             <caption>Neue Filme</caption>
@@ -16,7 +16,7 @@
                 <th>EN Cine</th>
                 <th>EN BD</th>
                 <th>Youtube Trailer</th>
-                <th>In eigene Liste hinzufügen</th>
+                <th>Optionen</th>
             </tr>
             </thead>
             <tbody>";
@@ -35,9 +35,20 @@
           $movie = $row['title'];
           $adding_yt = "trailer";
           $movieid = $row['id'];
+          switch ($showlist) {
+              case "0":
+                  $list = "1";
+                  break;
+              case "1":
+                  $list = "0";
+                  break;
+              default:
+                  $list = "0";
+                  break;
+          }
           $yt_search = $movie." ".$adding_yt;
           echo "<td>"."<a href='https://www.youtube.com/results?search_query=$yt_search'>Click here</a>"."</td>";
-          echo "<td>".ajaxcall($movieid, $i)."</td>";
+          echo "<td>".call_user_func('fnalist' . $list, $movieid, $i)."</td>";
           echo "</tr>";
           $i++;
         }

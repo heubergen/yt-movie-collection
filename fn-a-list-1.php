@@ -1,9 +1,11 @@
 <?php
-function ajaxcall($movieid, $i){
+function fnalist1($movieid, $i){
+    //define new content of list column
+    $tolist = 1;
 return '
 <div class="first_div">
 <!-- THIS BUTTON CALLS AJAX SCRIPT -->
-<button id="showAjax" onclick="showAjaxStuff_'.$i.'();">Add</button>
+<button id="showAjax" onclick="showAjaxStuff_'.$i.'();">In eigene Liste hinzufügen</button>
 </div>
 
 <div class="second_div" id="ajax_auto_'.$i.'">
@@ -26,7 +28,7 @@ return '
             }
         };
         // CALLING THE PHP FILE
-        xmlhttp.open("GET","ajax-code.php?movieid='.$movieid.'");
+        xmlhttp.open("GET","ajax-code.php?movieid='.$movieid.'&tolist='.$tolist.'");
         xmlhttp.send();
 }
 </script>';
