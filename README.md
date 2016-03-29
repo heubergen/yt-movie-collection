@@ -15,4 +15,7 @@ Catch upcoming movies and organize them in a list
 * User OAuth from API (waiting for V2) (as sync for list)
 * Add hamburger menu to list for enhance options
 * Add this variable with other numbers in various lists files to different the loading list!
+
 ## Temp
+* http://developer.rottentomatoes.com/docs/read/json/v10/Upcoming_Movies
+* https://www.themoviedb.org
