@@ -14,4 +14,8 @@ Catch upcoming movies and organize them in a list
 * Made sql queries due to mysql escape more secure (http://stackoverflow.com/questions/60174/how-can-i-prevent-sql-injection-in-php?rq=1)
 * User OAuth from API (waiting for V2) (as sync for list)
 * Add hamburger menu to list for enhance options
+* Consider useage of a l10n system
+
 ## Temp
+* http://developer.rottentomatoes.com/docs/read/json/v10/Upcoming_Movies
+* https://www.themoviedb.org
