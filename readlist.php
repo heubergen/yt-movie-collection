@@ -47,7 +47,7 @@
                   break;
           }
           $yt_search = $movie." ".$adding_yt;
-          echo "<td>"."<a href='https://www.youtube.com/results?search_query=$yt_search'>Click here</a>"."</td>";
+          echo "<td>".readfile('button.html')."</td>";
           echo "<td>".call_user_func('fnalist' . $list, $movieid, $i)."</td>";
           echo "</tr>";
           $i++;
@@ -60,6 +60,7 @@
                 <!-- Responsive Table
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src='js/responsive_table.js'></script>";
+    <script src='js/responsive_table.js'></script>
+    <script src='js/popup.js'></script>";
         ;}
 ?>

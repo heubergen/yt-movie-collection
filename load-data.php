@@ -8,8 +8,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="TODO">
-    <!-- Custom styles for table -->
+    <!-- Custom styles -->
     <link href="css/responsive_table.css" rel="stylesheet">
+    <link href="css/popup.css" rel="stylesheet">
   </head>
   <body>
           <a class="navbar-brand" href="index.php">Startpage</a>
