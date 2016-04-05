@@ -47,9 +47,7 @@ function readlist($showlist){
             $list = "0";
             break;
             }
-        // save variable for later use in js
-        $title = $row['title'];
-            echo "<td>".call_user_func('yttrailer', $title, $y)."</td>";
+            echo "<td>".call_user_func('yttrailer', $movie, $y)."</td>";
             echo "<td>".call_user_func('fnalist' . $list, $movieid, $i)."</td>";
             echo "</tr>";
             $i++;

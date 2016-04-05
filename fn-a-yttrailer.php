@@ -1,9 +1,9 @@
 <?php
-function yttrailer($title, $y) {
+function yttrailer($movie, $y) {
     return '
                 <div class="first_div">
                 <!-- THIS BUTTON CALLS AJAX SCRIPT -->
-                <button id="showAjax" class="s3-btn" name="Open" onclick="showAjaxStuffyt_'.$y.'();">Show Video</button>
+                <button id="showAjax_'.$y.'" class="s3-btn" name="Open" onclick="showAjaxStuffyt_'.$y.'();">Show Video</button>
             </div>
             
             <div class="second_div" id="ajax_auto_yt_'.$y.'">
@@ -21,11 +21,11 @@ function yttrailer($title, $y) {
                 xmlhttp.onreadystatechange = function() {
                     // IF THE AJAX CALL IS SUCCESSFULL
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById("ajax_auto_'.$y.'").innerHTML = xmlhttp.responseText;
+                        document.getElementById("ajax_auto_yt_'.$y.'").innerHTML = xmlhttp.responseText;
                     }
                 };
                 // Action if button is clicked
-                xmlhttp.open("GET","yttrailer.php?name='.$title.'");
+                xmlhttp.open("GET","yttrailer-less.php?movie='.$movie.'");
                 xmlhttp.send();
             }
         </script>';
