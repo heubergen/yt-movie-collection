@@ -18,5 +18,3 @@ Catch upcoming movies and organize them in a list
 ## Temp
 * http://docs.themoviedb.apiary.io/#reference/movies/movieupcoming/get?console=1
 * http://api.themoviedb.org/3/movie/upcoming?api_key=060169d2f7cd495e487001173f9fcc2f
-
-NEW BRANCH!!!!
