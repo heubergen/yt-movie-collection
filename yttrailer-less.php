@@ -1,5 +1,6 @@
 <?php
 $movie = $_GET['movie'];
+$y = $_GET['id'];
 $adding_yt = "trailer";
 $yt_search = $movie . ' ' . $adding_yt;
 $yt_source = file_get_contents('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=relevance&q='.urlencode($yt_search).'&key=AIzaSyDyV_C_n9gYHT0y2Bulb2C3Fym2KM90o00');
@@ -11,10 +12,10 @@ if ($yt_decode['pageInfo']['totalResults']>0) {
 }
 echo'
 <!-- Overlay -->
-<div class="overlay" id="overlay" style="display:none;"></div>
+<div class="overlay" id="overlay_'.$y.'" style="display:none;"></div>
 
 <!-- Popup -->
-<div class="popup" id="popup">
+<div class="popup" id="popup_'.$y.'">
   <div class="popup-inner">
     <input type="button" name="Close" class="s3-btn-close" onclick="popupClose();" value="&times;">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/'.urlencode($yt_videoid). '" frameborder="0" allowfullscreen></iframe>

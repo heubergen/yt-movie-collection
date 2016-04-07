@@ -36,19 +36,20 @@ function readlist($showlist){
         $movie = $row['title'];
         $adding_yt = "trailer";
         $movieid = $row['id'];
+        echo "<td>".call_user_func('yttrailer', $movie, $y)."</td>";
         switch ($showlist) {
             case "0":
-            $list = "1";
+                echo "<td>".call_user_func('fnalist1', $movieid, $i).call_user_func('fnalist2', $movieid, $i)."</td>";
             break;
             case "1":
-            $list = "0";
+                echo "<td>".call_user_func('fnalist0', $movieid, $i)."</td>";
+            break;
+            case "2":
+                echo "<td>".call_user_func('fnalist0', $movieid, $i)."</td>";
             break;
             default:
-            $list = "0";
             break;
             }
-            echo "<td>".call_user_func('yttrailer', $movie, $y)."</td>";
-            echo "<td>".call_user_func('fnalist' . $list, $movieid, $i)."</td>";
             echo "</tr>";
             $i++;
             $y++;

@@ -25,7 +25,7 @@ function yttrailer($movie, $y) {
                     }
                 };
                 // Action if button is clicked
-                xmlhttp.open("GET","yttrailer-less.php?movie='.$movie.'");
+                xmlhttp.open("GET","yttrailer-less.php?movie='.$movie.'&id='.$y.'");
                 xmlhttp.send();
             }
         </script>';

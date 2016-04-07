@@ -19,8 +19,7 @@
       include 'check-new-data.php';
         $set = $_GET['set'];
         include 'readlist.php';
-        readlist($set);
-      //echo "$set";?>
+        readlist($set);?>
       <footer>
         <p>&copy;*Author*</p>
       </footer>
