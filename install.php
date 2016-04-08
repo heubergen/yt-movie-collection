@@ -17,19 +17,11 @@ Datenbanken werden erstellt und vorbereitet, bitte warten...<br>
    $sql1 = "CREATE TABLE IF NOT EXISTS tbl_movie (
      id varchar(15) PRIMARY KEY,
      title text,
-     link_href text,
      genre text,
-     cover_url text,
-     video_url text,
      rating text,
-     rating_date date,
-     de_cine date,
-     de_hd date,
-     en_cine date,
-     en_hd date,
-     date_rel date,
+     rel date,
      list tinyint default '0'
-   )";
+   );";
    // execute the sql command
    $conn->exec($sql1);
 
@@ -44,8 +36,6 @@ Datenbanken werden erstellt und vorbereitet, bitte warten...<br>
    $conn->query("INSERT INTO `tbl_set`(`last_api_date`) VALUES (CURDATE())");
    // load api files
             include 'api-calendar_upcoming.php';
-            include 'api-rating.php';
-            include 'api-release.php';
 ?>
 Datenbanken wurden erfolgreich erstellt.<br>Klick auf den Button um weiterzufahren.
 <?php

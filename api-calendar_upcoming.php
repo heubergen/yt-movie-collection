@@ -3,36 +3,33 @@
    include 'sql_con.php';
 
   //Download json file and save it in a variable
-  $url = "http://api.xrel.to/api/calendar/upcoming.json";
+  $url = "http://api.themoviedb.org/3/movie/upcoming?api_key=060169d2f7cd495e487001173f9fcc2f";
   $output = file_get_contents($url);
 
-  // Filter unused pattern in the json file
-  $out = substr($output,10, -3);
-
   //Convert json string into php array
-  $data = json_decode($out, true);
+  $data = json_decode($output, true);
 
   //Set variable
   $filter = "'";
 
  	//Loop for each entry
-  	foreach($data['payload'] as $item)
+  	foreach($data['results'] as $item)
     {
     		//Extract the Array Values & filter variable filter
                   $id_u         	= $item['id'];
                   $id        	    = str_replace($filter, '',$id_u);
-                  $title_u      	= $item['title'];
-  		            $title        	= str_replace($filter, '',$title_u);
-                  $link_u         = $item['link_href'];
-                  $link         	= str_replace($filter, '',$link_u);
-                  $genre_u        = $item['genre'];
+                  $title_u      	= $item['original_title'];
+  		          $title        	= str_replace($filter, '',$title_u);
+                  $genre_u          = $item['genre_ids'];
                   $genre        	= str_replace($filter, '',$genre_u);
-                  $cover_url_u    = $item['cover_url'];
-                  $cover_url      = str_replace($filter, '',$cover_url_u);
+                  $rel_u            = $item['release_date'];
+                  $rel              = str_replace($filter, '',$rel_u);
+                  $rating_u         = $item['vote_average'];
+                  $rating           = str_replace($filter, '',$rating_u);
 
                   // insert data in table
-                  $sql = "INSERT IGNORE INTO tbl_movie(id, title, link_href, genre, cover_url)
-                        VALUES('$id', '$title', '$link', '$genre', '$cover_url')";
+                  $sql = "INSERT IGNORE INTO tbl_movie(id, title, genre, rel, rating)
+                        VALUES('$id', '$title', '$genre', '$rel', '$rating')";
 
                         // execute the sql command
                         $conn->exec($sql);
