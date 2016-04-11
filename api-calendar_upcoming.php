@@ -20,16 +20,12 @@
                   $id        	    = str_replace($filter, '',$id_u);
                   $title_u      	= $item['original_title'];
   		          $title        	= str_replace($filter, '',$title_u);
-                  $genre_u          = $item['genre_ids'];
-                  $genre        	= str_replace($filter, '',$genre_u);
-                  $rel_u            = $item['release_date'];
-                  $rel              = str_replace($filter, '',$rel_u);
                   $rating_u         = $item['vote_average'];
                   $rating           = str_replace($filter, '',$rating_u);
 
                   // insert data in table
-                  $sql = "INSERT IGNORE INTO tbl_movie(id, title, genre, rel, rating)
-                        VALUES('$id', '$title', '$genre', '$rel', '$rating')";
+                  $sql = "INSERT IGNORE INTO tbl_movie(id, title, rating)
+                        VALUES('$id', '$title', '$rating')";
 
                         // execute the sql command
                         $conn->exec($sql);

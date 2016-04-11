@@ -9,10 +9,7 @@ function readlist($showlist){
         <thead>
         <tr>
         <th>Titel</th>
-        <th>Genre</th>
         <th>Rating</th>
-        <th>DE Cine</th>
-        <th>DE BD</th>
         <th>EN Cine</th>
         <th>EN BD</th>
         <th>Youtube Trailer</th>
@@ -26,12 +23,8 @@ function readlist($showlist){
     foreach($conn->query("SELECT * FROM tbl_movie WHERE `list`='$showlist'") as $row) {
         echo "<tr>";
         echo "<td>".$row['title']."</td>";
-        echo "<td>".$row['genre']."</td>";
         echo "<td>".$row['rating']."</td>";
-        echo "<td>".$row['de_cine']."</td>";
-        echo "<td>".$row['de_hd']."</td>";
-        echo "<td>".$row['en_cine']."</td>";
-        echo "<td>".$row['en_hd']."</td>";
+        echo "<td>".$row['rel']."</td>";
         //preparing variables
         $movie = $row['title'];
         $adding_yt = "trailer";

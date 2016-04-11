@@ -17,7 +17,6 @@ Datenbanken werden erstellt und vorbereitet, bitte warten...<br>
    $sql1 = "CREATE TABLE IF NOT EXISTS tbl_movie (
      id varchar(15) PRIMARY KEY,
      title text,
-     genre text,
      rating text,
      rel date,
      list tinyint default '0'
