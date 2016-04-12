@@ -15,6 +15,7 @@
  	//Loop for each entry
   	foreach($data['results'] as $item)
     {
+        $genres = $item['genre_ids'];
     		//Extract the Array Values & filter variable filter
                   $id_u         	= $item['id'];
                   $id        	    = str_replace($filter, '',$id_u);
@@ -22,10 +23,31 @@
   		          $title        	= str_replace($filter, '',$title_u);
                   $rating_u         = $item['vote_average'];
                   $rating           = str_replace($filter, '',$rating_u);
+                  $genre1_u          = $genres['0'];
+                  $genre1           = str_replace($filter, '',$genre1_u);
+                  $genre2_u          = $genres['1'];
+                  $genre2           = str_replace($filter, '',$genre2_u);
+                  $genre3_u          = $genres['2'];
+                  $genre3           = str_replace($filter, '',$genre3_u);
+        //foreach($genres as $itemg)
+                  //{
+                      //echo "$itemg";
+                       //echo "<br>";
+                      //foreach ($itemg as $genre)
+                      //{
+                          //echo "$genre";
+                          //echo "<br>";
+                      //}
+                      //$sql = "INSERT IGNORE INTO tbl_movie(genres) 
+                      //VALUES('$itemg')";
+                      //echo "$itemg";
+                      //echo "<br>";
+                      //$conn->exec($sql);
+                  //}
 
                   // insert data in table
-                  $sql = "INSERT IGNORE INTO tbl_movie(id, title, rating)
-                        VALUES('$id', '$title', '$rating')";
+                  $sql = "INSERT IGNORE INTO tbl_movie(id, title, rating, genre1, genre2, genre3)
+                        VALUES('$id', '$title', '$rating', '$genre1', '$genre2', '$genre3')";
 
                         // execute the sql command
                         $conn->exec($sql);

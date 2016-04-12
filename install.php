@@ -18,7 +18,9 @@ Datenbanken werden erstellt und vorbereitet, bitte warten...<br>
      id varchar(15) PRIMARY KEY,
      title text,
      rating text,
-     rel date,
+     genre1 SMALLINT,
+     genre2 SMALLINT,
+     genre3 SMALLINT,
      list tinyint default '0'
    );";
    // execute the sql command
