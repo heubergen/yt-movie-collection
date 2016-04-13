@@ -23,27 +23,24 @@
   		          $title        	= str_replace($filter, '',$title_u);
                   $rating_u         = $item['vote_average'];
                   $rating           = str_replace($filter, '',$rating_u);
-                  $genre1_u          = $genres['0'];
-                  $genre1           = str_replace($filter, '',$genre1_u);
-                  $genre2_u          = $genres['1'];
-                  $genre2           = str_replace($filter, '',$genre2_u);
-                  $genre3_u          = $genres['2'];
-                  $genre3           = str_replace($filter, '',$genre3_u);
-        //foreach($genres as $itemg)
-                  //{
-                      //echo "$itemg";
-                       //echo "<br>";
-                      //foreach ($itemg as $genre)
-                      //{
-                          //echo "$genre";
-                          //echo "<br>";
-                      //}
-                      //$sql = "INSERT IGNORE INTO tbl_movie(genres) 
-                      //VALUES('$itemg')";
-                      //echo "$itemg";
-                      //echo "<br>";
-                      //$conn->exec($sql);
-                  //}
+                  if (empty($genres['0']))
+                  {} else
+                      {
+                          $genre1_u          = $genres['0'];
+                          $genre1           = str_replace($filter, '',$genre1_u);
+                      }
+                  if (empty($genres['1']))
+                  {} else
+                      {
+                          $genre2_u          = $genres['1'];
+                          $genre2           = str_replace($filter, '',$genre2_u);
+                      }
+                  if (empty($genres['2']))
+                  {} else
+                      {
+                          $genre3_u         = $genres['2'];
+                          $genre3           = str_replace($filter, '',$genre3_u);
+                      }
 
                   // insert data in table
                   $sql = "INSERT IGNORE INTO tbl_movie(id, title, rating, genre1, genre2, genre3)

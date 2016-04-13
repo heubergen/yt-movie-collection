@@ -10,7 +10,7 @@ function readlist($showlist){
         <tr>
         <th>Titel</th>
         <th>Rating</th>
-        <th>Genre 1</th>
+        <th>Genres</th>
         <th>Youtube Trailer</th>
         <th>Optionen</th>
         </tr>
@@ -23,7 +23,7 @@ function readlist($showlist){
         echo "<tr>";
         echo "<td>".$row['title']."</td>";
         echo "<td>".$row['rating']."</td>";
-        echo "<td>".$row['genre1'].",".$row['genre2'].",".$row['genre3']."</td>";
+        echo "<td>".$row['genre1'].", ".$row['genre2'].", ".$row['genre3']."</td>";
         //preparing variables
         $movie = $row['title'];
         $adding_yt = "trailer";
