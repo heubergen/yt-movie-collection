@@ -31,13 +31,13 @@ function readlist($showlist){
         echo "<td>".call_user_func('yttrailer', $movie, $y)."</td>";
         switch ($showlist) {
             case "0":
-                echo "<td>".call_user_func('fnalist1', $movieid, $i).call_user_func('fnalist2', $movieid, $i)."</td>";
+                echo "<td>".call_user_func('fnalist1', $movieid, $i).call_user_func('fnalist2', $movieid, $i)."<a href='https://www.xrel.to/search.html?xrel_search_query=".$movie."'>Suche</a>"."</td>";
             break;
             case "1":
-                echo "<td>".call_user_func('fnalist0', $movieid, $i)."</td>";
+                echo "<td>".call_user_func('fnalist0', $movieid, $i)."<a href='https://www.xrel.to/search.html?xrel_search_query=".$movie."'>Suche</a>"."</td>";
             break;
             case "2":
-                echo "<td>".call_user_func('fnalist0', $movieid, $i)."</td>";
+                echo "<td>".call_user_func('fnalist0', $movieid, $i)."<a href='https://www.xrel.to/search.html?xrel_search_query=".$movie."'>Suche</a>"."</td>";
             break;
             default:
             break;
